@@ -1,8 +1,12 @@
-// Connect to the 'octofit_db' database before running this script if using the mongo shell.
+const { MongoClient } = require('mongodb');
 
-db.createCollection("users")
+async function init() {
+  const client = await MongoClient.connect('mongodb://localhost:27017');
+  const db = client.db('octofit_db');
+
+  await db.createCollection("users");
 db.createCollection("teams")
 db.createCollection("activity")
 db.createCollection("leaderboard")
 db.createCollection("workouts")
-db.users.createIndex({ email: 1 }, { unique: true })
+db.users.createIndex({ email: 1 }, { unique: true })}
