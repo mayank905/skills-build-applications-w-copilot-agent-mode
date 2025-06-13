@@ -4,7 +4,11 @@ function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch('https://probable-disco-p7jqx56prrw2rxj4-8000.app.github.dev/api/activity/')
+    // Dynamically fetch the API endpoint using an environment variable or a configuration
+    const apiBaseUrl = process.env.REACT_APP_API_BASE_URL || 'https://default-api-url.com';
+    const endpoint = `${apiBaseUrl}/api/activity/`;
+
+    fetch(endpoint)
       .then(res => res.json())
       .then(data => setActivities(data));
   }, []);
