@@ -4,7 +4,7 @@ function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/activities/`)
+    fetch('https://probable-disco-p7jqx56prrw2rxj4-8000.app.github.dev/api/activities/')
       .then(res => res.json())
       .then(data => setActivities(data));
   }, []);
