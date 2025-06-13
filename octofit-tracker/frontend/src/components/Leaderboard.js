@@ -6,7 +6,7 @@ function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/leaderboard/`)
+    fetch(`${API_BASE_URL}/leaderboard`)
       .then(res => res.json())
       .then(data => setLeaderboard(data));
   }, []);
