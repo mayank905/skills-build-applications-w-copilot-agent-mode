@@ -4,7 +4,7 @@ function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/activity/`)
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/api/activities/`)
       .then(res => res.json())
       .then(data => setActivities(data));
   }, []);
