@@ -6,6 +6,7 @@ class Command(BaseCommand):
     help = 'Populate the octofit_db database with test data.'
 
     def handle(self, *args, **kwargs):
+        # Populating the octofit_db database with test data for users, teams, activities, leaderboards, and workouts.
         # Users
         user1 = User.objects.create(email='alice@example.com', name='Alice', password='alicepass')
         user2 = User.objects.create(email='bob@example.com', name='Bob', password='bobpass')
@@ -28,5 +29,5 @@ class Command(BaseCommand):
         Workout.objects.create(user=user1, workout_type='cardio', details='5km run', date=timezone.now())
         Workout.objects.create(user=user2, workout_type='strength', details='Upper body', date=timezone.now())
         Workout.objects.create(user=user3, workout_type='yoga', details='Morning session', date=timezone.now())
-
+        
         self.stdout.write(self.style.SUCCESS('Test data populated successfully.'))
