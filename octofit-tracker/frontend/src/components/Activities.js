@@ -6,7 +6,7 @@ function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/activity/${process.env.CODESPACE_SUFFIX}`)
+    fetch(`${API_BASE_URL}/api/activity/`)
       .then(res => res.json())
       .then(data => setActivities(data));
   }, []);

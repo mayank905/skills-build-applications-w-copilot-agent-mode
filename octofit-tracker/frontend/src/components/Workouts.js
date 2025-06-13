@@ -6,7 +6,7 @@ function Workouts() {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/workouts/${process.env.CODESPACE_SUFFIX}`)
+    fetch(`${API_BASE_URL}/api/workouts/`)
       .then(res => res.json())
       .then(data => setWorkouts(data));
   }, []);
