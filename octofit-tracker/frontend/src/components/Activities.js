@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 function Activities() {
   const [activities, setActivities] = useState([]);
 
   useEffect(() => {
-    // Dynamically fetch the API endpoint using an environment variable or a configuration
-    const apiBaseUrl = process.env.REACT_APP_API_BASE_URL || 'https://default-api-url.com';
-    const endpoint = `${apiBaseUrl}/api/activity/`;
-
-    fetch(endpoint)
+    fetch(`${API_BASE_URL}/api/activity/`)
       .then(res => res.json())
       .then(data => setActivities(data));
   }, []);

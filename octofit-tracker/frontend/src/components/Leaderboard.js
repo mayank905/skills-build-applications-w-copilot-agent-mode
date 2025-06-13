@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {
-    fetch('https://probable-disco-p7jqx56prrw2rxj4-8000.app.github.dev/api/leaderboard/')
+    fetch(`${API_BASE_URL}/api/leaderboard/`)
       .then(res => res.json())
       .then(data => setLeaderboard(data));
   }, []);

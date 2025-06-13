@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
 function Workouts() {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch('https://probable-disco-p7jqx56prrw2rxj4-8000.app.github.dev/api/workouts/')
+    fetch(`${API_BASE_URL}/api/workouts/`)
       .then(res => res.json())
       .then(data => setWorkouts(data));
   }, []);
