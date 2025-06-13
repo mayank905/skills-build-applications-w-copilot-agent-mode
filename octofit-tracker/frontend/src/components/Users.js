@@ -6,7 +6,7 @@ function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/users/`)
+    fetch(`${API_BASE_URL}/api/users/${process.env.CODESPACE_SUFFIX}`)
       .then(res => res.json())
       .then(data => setUsers(data));
   }, []);

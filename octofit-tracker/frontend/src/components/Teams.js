@@ -6,7 +6,7 @@ function Teams() {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/api/teams/`)
+    fetch(`${API_BASE_URL}/api/teams/${process.env.CODESPACE_SUFFIX}`)
       .then(res => res.json())
       .then(data => setTeams(data));
   }, []);
