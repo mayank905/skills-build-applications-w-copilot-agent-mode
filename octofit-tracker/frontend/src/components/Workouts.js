@@ -6,7 +6,7 @@ function Workouts() {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/workouts`)
+    fetch(`https://probable-disco-p7jqx56prrw2rxj4-3000.app.github.dev/workouts`)
       .then(res => res.json())
       .then(data => setWorkouts(data));
   }, []);

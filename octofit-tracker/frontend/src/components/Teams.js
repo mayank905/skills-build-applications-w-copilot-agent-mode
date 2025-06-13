@@ -6,7 +6,7 @@ function Teams() {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_BASE_URL}/teams`)
+    fetch(`https://probable-disco-p7jqx56prrw2rxj4-3000.app.github.dev/teams`)
       .then(res => res.json())
       .then(data => setTeams(data));
   }, []);
