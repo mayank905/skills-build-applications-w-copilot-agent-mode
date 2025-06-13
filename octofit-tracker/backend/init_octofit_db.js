@@ -1,4 +1,4 @@
-use octofit_db
+// Connect to the 'octofit_db' database before running this script if using the mongo shell.
 
 db.createCollection("users")
 db.createCollection("teams")
