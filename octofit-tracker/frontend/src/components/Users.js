@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-
 function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch(`https://probable-disco-p7jqx56prrw2rxj4-3000.app.github.dev/users`)
+    fetch('https://probable-disco-p7jqx56prrw2rxj4-8000.app.github.dev/api/users/')
       .then(res => res.json())
       .then(data => setUsers(data));
   }, []);

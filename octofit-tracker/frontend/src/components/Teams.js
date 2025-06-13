@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-
 function Teams() {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    fetch(`https://probable-disco-p7jqx56prrw2rxj4-3000.app.github.dev/teams`)
+    fetch('https://probable-disco-p7jqx56prrw2rxj4-8000.app.github.dev/api/teams/')
       .then(res => res.json())
       .then(data => setTeams(data));
   }, []);
